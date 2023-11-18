@@ -6,7 +6,7 @@
 
 // MAIN()
 
-// initialise
+// initialise Parameters
 let params = {};
 params = {
     output: "",
@@ -14,7 +14,7 @@ params = {
 }
 let htmlOutput = "";
 
-let listFruits = ["manggo", "banana", "apple", "durian",
+let listFruits = ["mango", "banana", "apple", "durian",
 "red apple", "manggis", "rambutan", "pear", "melon"
 ];
 
@@ -33,20 +33,20 @@ getOutputHtml("", params);
 
 function getFruits() {
     // call list of fruits
-     
+      
 
     let htmlOutput = "";
-    let fibString = "";
+    let fruitString = "";
 
 // append HTML tagging of fruits
     for (const fruit of listFruits) {
         console.log(fruit);
         
-        fibString = "<br>Fruits (" + fruit + "): " ;
-        htmlOutput = htmlOutput + fibString;
+        fruitString = "<br>Fruits (" + fruit + "): " ;
+        htmlOutput = htmlOutput + fruitString;
         
     }
-    console.log(fibString);
+    console.log(fruitString);
     console.log(htmlOutput);
 
     return htmlOutput;
@@ -65,7 +65,8 @@ function getOutputHtml(outputText, params) {
 
 
 function getHtml() {
-    // Headings section 
+    // Headings section . 
+    //this is to start the document writing part of the Headings section.
     document.write("<br>");
     document.write("TEAM DAY5 Assignment - TASK5 .js");
     document.write("<br>"); 
