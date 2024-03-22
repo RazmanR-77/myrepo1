@@ -6,11 +6,10 @@ public class Book {
   private LocalDate IssueDate;
   private LocalDate ExpectedReturnDate;
   private LocalDate ReturnDate;
-  private String title;
+  private final String title;
 
-  //todo
-  String author;
-  private int bookID; // ISBN identifier for books
+  private String author;
+  private final int bookID; // ISBN identifier for books
   private int issuedTo;
   public Boolean isIssued;
 
@@ -19,7 +18,9 @@ public class Book {
     this.title = title;
     this.bookID = bookId;
     this.isIssued = false;
+    this.author = "author";
   }
+
 
   public String getTitle() {
     return title;
@@ -27,6 +28,14 @@ public class Book {
 
   public int getBookID() {
     return bookID;
+  }
+
+  public String getAuthor() {
+    return author;
+  }
+
+  public void setAuthor(String author) {
+    this.author = author;
   }
 
   public void setIssuedTo(int issuedTo) {
@@ -45,6 +54,7 @@ public class Book {
     return ExpectedReturnDate;
   }
 
+  // future version update, using Member
 //  void Issue(int id, Member member) {
 //    member.setIssued(this.bookID);
 //    member.canIssue = false;
