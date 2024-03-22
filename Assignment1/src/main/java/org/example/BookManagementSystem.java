@@ -5,12 +5,10 @@ import java.util.Scanner;
 import org.example.assign1.Book;
 
 /**
- * //    Assign1day35
+ * //    Assign1day35 Assignment1
  * by RazmanR
  * date 17/3/2024
  */
-
-
 public class BookManagementSystem {
 
     private static final int MAX_BOOKS = 10; //Maximum number of books in the system, can be customised here.
@@ -28,27 +26,33 @@ public class BookManagementSystem {
     }
 
     public static void main(String[] args) {
-
-//        todo
-//       bookBMS Library
+        //       bookBMS Library
         BookManagementSystem library = new BookManagementSystem();
+        System.out.println();
+        System.out.println(
+                "WELCOME TO (BMS) BOOK MANAGEMENT SYSTEM. BY RazmanR 3/24");
+        System.out.println("Starting up...Initialising...");
 
         // Adding books to the system
-        library.addBook(new Book("The Great Gatsby", 978074365));
+        library.addBook(new Book("The Great Gatsby",
+                Long.parseLong("1000451524922"),
+                "F. Scott Fitzgerald"));
+
+        library.addBook(new Book("1984",
+                Long.parseLong("1000451524935"), "George Orwell"));
 
         //  add book by Title text, and increase id by 1
         library.addBook("Agile Web Development");
-        addBook("Web Development");
-        addBook("Flask Web Development");
+        library.addBook("Web Development");
+        library.addBook("Flask Web Development");
 
+        // add book by custom title from user input
         Scanner sc = new Scanner(System.in);
-        String input = "";
+        //        add book
+        library.addBook(sc);
+        library.listBooks();
 
-//        add book
-        addBook(sc);
-        listBooks();
-
-        findBookByTitle(sc);
+        library.   findBookByTitle(sc);
 
         //PAUSE Enter any key to end
         System.out.println("BOOKMS: Enter any key");
@@ -68,7 +72,7 @@ public class BookManagementSystem {
         boolean found = false;
         try {
             for (Book thisBook : books) {
-//         -try find substring   abc  of title ,
+//         -try find substring   "abc"  of title ,
                 if (thisBook.getTitle().toLowerCase().indexOf(input.toLowerCase()) >= 0) {
                     System.out.println("FIND: found the book!");
                     System.out.println(thisBook.getTitle());
@@ -130,7 +134,6 @@ public class BookManagementSystem {
 
     private static void addBook(Book book) {
         System.out.println("ADD:  ");
-        // Book book = new Book(title, i + 1);
 
         books[i] = book;
         i++;

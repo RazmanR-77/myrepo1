@@ -2,6 +2,12 @@ package org.example.assign1;
 
 import java.time.LocalDate;
 
+
+/**
+ * //    Assign1day35 Assignment1
+ * by RazmanR
+ * date 17/3/2024
+ */
 public class Book {
   private LocalDate IssueDate;
   private LocalDate ExpectedReturnDate;
@@ -9,24 +15,32 @@ public class Book {
   private final String title;
 
   private String author;
-  private final int bookID; // ISBN identifier for books
+  private final long bookID; // ISBN identifier for books, 13 digit
   private int issuedTo;
   public Boolean isIssued;
 
-  public  Book(String title, int bookId) {
-    // constructor OOP
+  public  Book(String title, long bookId) {
+    // constructor OOP of Book instance
     this.title = title;
     this.bookID = bookId;
     this.isIssued = false;
-    this.author = "author";
+    this.author = "author"; // set default author
   }
 
+  public  Book(String title, long bookId, String author)
+  {
+    // constructor OOP. set custom author
+    this.title = title;
+    this.bookID = bookId;
+    this.isIssued = false;
+    this.author = author;
+  }
 
   public String getTitle() {
     return title;
   }
 
-  public int getBookID() {
+  public long getBookID() {
     return bookID;
   }
 
