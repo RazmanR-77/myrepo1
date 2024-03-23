@@ -1,0 +1,66 @@
+  .header {
+    background-color: gray;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  h2, h3, h4 {
+    color: black;
+  }
+  
+  .row {
+    margin-bottom: 20px;
+  }
+  
+  .service {
+    border: 1px solid whitesmoke;
+    padding: 10px;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .btn-primary {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: black;
+  }
+  
+  .section-divider {
+    margin-top: 40px;
+    border-top: 1px solid white;
+    padding-top: 20px;
+  }
+  
+  #contact-details {
+    margin-top: 20px;
+  }
+  
+  footer {
+    margin-top: 20px;
+    text-align: center;
+    color: gray;
+  }
+  
+  
+  
