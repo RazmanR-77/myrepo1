@@ -1,4 +1,9 @@
 // index.js
+
+//final hackathon Ecommerce shopping website//
+// date 7/4/2024
+
+//developer: Razman , Alex adding rows data and images
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
