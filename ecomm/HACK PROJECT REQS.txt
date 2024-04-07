@@ -1,0 +1,277 @@
+
+
+Hackathon
+Marc & Zed Training
+•
+08:39
+100 points
+Instructions:
+1.Make a E-commerce clothes application using MERN stack technologies.
+2.Make maximum categories and sub - categories.(Like Men, women, kids and T-shirts, jeans etc)
+3. Use proper images and bootstrap classes also custom CSS to design and make it responsive.
+4. Use google fonts and proper icons if needed to make it look more attractive.
+5. Make a proper checkout system
+6. Use API's to fetch the data or you can make your own API
+
+
+
+
+jeans and put there
+
+
+-
+HeaderABC.js
+
+
+// author by RAzmanZul Alex 
+
+ <CustomItemContext>
+      <HeaderZul.js />
+RouteZul
+      <ProductListAlex />
+
+ProductItemAlex
+    </CustomItemContext>
+
+
+index backendRazman 
+
+-
+mail product list AbCd
+
+
+
+todo  =-=
+shop ---
+name of product 
+no of item 
+price 
+quanitty 
+total price  
+
+
+
+-
+tasks ===
+-zul 
+frontend 
+product page   
+changes  
+design
+
+
+-shahrul 
+login registation and authentication
+setup and develop
+
+  
+
+-
+alex  
+products
+
+
+razman
+backend restapi  
+   
+
+;;s
+work on the checkout  cart
+
+-available  ---
+-add cart
+checkout  
+
+
+
+
+
+-
+present well to company 
+
+you are company;;
+
+
+final is AI
+
+
+
+-
+github   =-=
+
+-linkedin projects section
+harjinther  
+
+-developer expereince
+up salary 30%
+
+rm4k 
+rm4k5
+rm5k6
+
+11k
+
+add certificaton  
+coursera udemy
+
+
+-googel classrom 
+rfereence 
+for 6 months 
+
+
+
+-qq QQ =-=-
+after this google 
+classroom platofrm??
+
+git github  
+;;
+
+
+todo
+group1 UI userintercae 
+
+
+group2
+
+group3 
+
+backend frontend 
+;;;
+
+
+
+-
+mergee
+merege ==
+
+todooo
+button done =-=
+filter 
+-sorting  make nicer
+
+try fixx errors codes
+
+-
+todo   WHAT DOO NEXT  =-=-
+
+mere 
+
+image proeprty alignemnt   
+;;
+
+
+backgorund image     
+to check 
+
+algnment 
+
+
+
+login auth 
+
+register user  
+
+cloud databsae ??
+
+
+
+checkout  
+
+cart 
+totalprice  
+
+search 
+
+user button  
+
+
+
+
+
+login auth 
+
+register user  
+
+cloud databsae ??
+
+
+
+
+
+button done =-=
+filter 
+-sorting  make nicer
+
+
+
+men women data 
+in index.,js
+
+
+-
+todo   WHAT DOO NEXT  =-=-
+
+checkout  
+
+cart 
+totalprice  
+
+search 
+
+user button  
+
+
+
+
+figma  tooldr
+
+
+
+-
+http get all
+http get by id 
+http post insert 
+
+http delete by id
+-shop cart 
+shoppee 
+
+
+
+
+
+QQ  
+restapi  
+shop cart  ---
+
+todo
+add
+products   
+
+checkout  
+
+product /checkout  
+
+afte checkout clear  
+
+
+
+
+
+
+
+-pages ----
+checkout  
+
+product page   
+
+
+rest api 
+
+
+context  
+
+product list
+
