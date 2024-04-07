@@ -389,22 +389,28 @@ app.delete('/product/delete/:id', (req, res) => {
 app.post("/api/product", async (req, res) => {
   // insert  
   try {
-    const { product, id } = req.body;
+    const { id, name,
+      type,
+      description,
+      price,
+      image } = req.body;
 
-    if (!product || !id) {
+    if (!name || !id) {
       return res
         .status(400)
         .json({ error: "User and message are required" });
     }
 
-    const productSave = new Product({
-      product,
-      id,
+    const saveData = new Product({
+      id, name,
+      type,
+      description,
+      price,
+      image
     });
+    await saveData.save();
 
-    await productSave.save();
-
-    res.status(201).json(productSave);
+    res.status(201).json(saveData);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
