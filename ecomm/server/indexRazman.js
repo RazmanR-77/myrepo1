@@ -38,7 +38,7 @@ const Product = mongoose.model('Product', productSchema);
 
 //shop cart
 const shopCartSchema = new mongoose.Schema({
-  idnum: Number,
+  id: Number,
   name: String,
   price: Number,
   totalPrice: Number,
@@ -47,7 +47,6 @@ const shopCartSchema = new mongoose.Schema({
 });
 
 const ShopCart = mongoose.model('ShopCart', shopCartSchema);
-
 
 
 
@@ -312,7 +311,7 @@ seedDatabase();
 // }
 
 
-
+//shop cart
 // HTTP GETTT
 // Define API endpoint for fetching all shopcart
 app.get('/api/shopcart', async (req, res) => {
@@ -329,7 +328,43 @@ app.get('/api/shopcart', async (req, res) => {
   }
 });
 
+app.post("/api/shopcart", async (req, res) => {
+  // insert  
+  try {
+    const { id,
+      name,
+      price,
+      totalPrice,
+      image ,
+      quantity  } = req.body;
 
+    if (!name || !id) {
+      return res
+        .status(400)
+        .json({ error: "parameters are required" });
+    }
+
+    const saveData = new ShopCart({
+      id,
+      name,
+      price,
+      totalPrice,
+      image ,
+      quantity 
+    });
+    await saveData.save();
+
+    res.status(201).json(saveData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
+
+
+//products
 // Define API endpoint for fetching all products
 app.get('/api/products', async (req, res) => {
   try {
@@ -416,8 +451,6 @@ app.post("/api/product", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-
-
 
 
 
