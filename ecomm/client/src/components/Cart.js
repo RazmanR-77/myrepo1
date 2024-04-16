@@ -9,11 +9,13 @@ import { itemContext } from '../context/ItemContext';
 export default function Cart(clickCart, itemsInCart)
 
 
+// not complete codes todo
 // function Cart(clickCart, itemsInCart) 
 {
 
     const { itemsInCart, totalPrice } = useContext(itemContext);
 
+    // function clickCart()
 
 
     return (

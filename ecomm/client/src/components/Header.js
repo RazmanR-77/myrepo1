@@ -4,6 +4,7 @@ import { itemContext } from '../context/ItemContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import "./Header.css";
+import CartDetails from "./CartDetails";
 
 function Header() {
     const [click, setClick] = useState(false);
@@ -12,6 +13,11 @@ function Header() {
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
+
+    function clickCart() {
+        // <CartDetails />
+        return console.log("clickCart");
+    }
 
     return (
         <div>
@@ -42,38 +48,36 @@ function Header() {
                             </Link>
                         </li>
                     </ul>
-                    <div className='navbar-items'>
-                        <h3 style={{ color: "green" }}>
-                            Total Price: {totalPrice}
-                        </h3>
-                        <div className='cart-num'>
-                            <FontAwesomeIcon
-                                icon={faCartShopping} size="2x" />
+
+                    <div class="row m-auto">
+                        <div class="navbar-items " >
+                            <div> &nbsp; </div>
+                            <div> &nbsp; </div>
                             <div className='cart-items'>
                                 {itemsInCart}
                             </div>
-                        </div>
-                        {/* pls add to code   */}
-                        <div>
-                            <a href='http://localhost:5000/api/shopcart' target='_blank'  >
-                                <div className='cart-num' onClick={(e) => clickCart()} >
-                                    <FontAwesomeIcon
-                                        icon={faCartShopping} size="2x" />
-                                    <div className='cart-items'>
-                                        {itemsInCart}
+
+                            <h3 style={{ color: "green" }}>
+                                Total Price: {totalPrice}
+                            </h3>
+                            <div>
+                                <Link to="/cart" className="" onClick={(e) => clickCart()} >
+                                    <div className='cart-num'>
+                                        <FontAwesomeIcon
+                                            icon={faCartShopping} size="2x" />
                                     </div>
-                                </div>
-                            </a>
+                                </Link>
+                                &nbsp;
+                            </div>
+                            <div> &nbsp; </div>
                         </div>
+                        <div> &nbsp; </div>
                     </div>
                 </div>
             </nav>
         </div>
     );
-    function clickCart() {
 
-        return console.log("clickCart");
-    }
 }
 
 export default Header;
