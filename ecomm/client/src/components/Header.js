@@ -15,7 +15,7 @@ function Header() {
     const closeMobileMenu = () => setClick(false);
 
     function clickCart() {
-        // <CartDetails />
+        // <CartDetails />  todo remove
         return console.log("clickCart");
     }
 
@@ -49,14 +49,14 @@ function Header() {
                         </li>
                     </ul>
 
-                    <div class="row m-auto">
-                        <div class="navbar-items " >
+                        {/* by developer RazmanR  */}
+                    <div className="row m-auto">
+                        <div className="navbar-items " >
                             <div> &nbsp; </div>
                             <div> &nbsp; </div>
                             <div className='cart-items'>
                                 {itemsInCart}
                             </div>
-
                             <h3 style={{ color: "green" }}>
                                 Total Price: {totalPrice}
                             </h3>

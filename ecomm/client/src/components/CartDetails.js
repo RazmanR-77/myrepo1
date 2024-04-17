@@ -1,11 +1,13 @@
 // <!-- cartdetails.js.HTML -->
 // <!-- convert from trasnfrom tools cod eonline   -->
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 // import { Container, Row, Col, Button } from "reactstrap";
 
-// import Toggle from "../Toggle";
+import Toggle from "./Toggle";
 import PiImg from '../assets/images/Raspberry_Pi.png';
 import PiLcdImg from '../assets/images/Raspberry_Pi_LCD.png';
+import { itemContext } from "../context/ItemContext";
+import ProductItem from "./ProductItem";
 
 
 function CartDetails(props) {
@@ -19,23 +21,38 @@ function CartDetails(props) {
         taxes: 9.14,
         falseShipping: true
     };
+
+    //useState
     const { itemCount, subTotal, taxes } = state;
+
+    ///
+let pass = {one: 1};
+
+// props.data
+    pass = { ...pass ,pass};
+
     const shippingTotal = Number(props.data);
-    const orderTotal = subTotal + shippingTotal + taxes;
+    const orderTotal =    subTotal + shippingTotal + taxes;
+
+//    todo  ;;
+    // cart =  useContext( itemContext);
 
     //   <!-- } -->
     /////
 
-
+ 
     // todoooo todo
     // tryyyy with thiss codes first  ;;
     // copyy convert to here
 
     return (
         <>
-
             <container className="cart-details-container">
-                <toggle className="container-fluid">
+              
+              todo
+            ccbbtogg 
+            on Toggleclass
+                <Toggle className="container-fluid">
                     {({ on, off, toggle }) => (
                         <div className="container-fluid">
                             <h2 onClick={toggle}>
@@ -43,24 +60,21 @@ function CartDetails(props) {
                                 {on && <span>-</span>}
                             </h2>
 
-
-                            {on && (
+ 
+                            {on || (
                                 <container>
-                                    <row>
-                                        <div className="media">
-                                            <div className="media-body">
-                                                <img src={PiImg} className="img-fluid mr-3" alt="raspberry pi" />
-                                            </div>
-                                            <h5 className="mt-0">Raspberry Pi 3 Model B Motherboard</h5>
-                                        </div>
-                                        <div className="media-count">
-                                            <p>1</p>
-                                        </div>
-                                        <div className="container-fluid">
-                                            <h6>$38.50</h6>
-                                        </div>
-                                    </row>
-                                    <row>
+
+                                    cart.product; 
+                                    iteminCart;  is counter
+{/* {console.log(iteminCart)} */}
+{console.log( "props data== " , props)}
+
+                                    
+
+                                    <CartItem product= {1}/>
+                                    <CartItem />
+  
+                                    {/* <row>
                                         <div className="media">
                                             <div className="media-body">
                                                 <img src={PiLcdImg} className="img-fluid mr-3" alt="pi lcd" />
@@ -73,12 +87,12 @@ function CartDetails(props) {
                                         <div className="container-fluid">
                                             <h6>$72.92</h6>
                                         </div>
-                                    </row>
+                                    </row> */}
                                 </container>
                             )}
                         </div>
                     )}
-                </toggle>
+              </Toggle>  
                 Toggle --at the top;;
                 {/* <!-- <Toggle />   --> */}
 
@@ -87,6 +101,10 @@ function CartDetails(props) {
                         <h6>
                             Subtotal ({itemCount} items):
                         </h6>
+
+                        todo 
+                        set Toggle to on aND SHOW HERE;
+                    orderTotal and shipping
                         <h6>
                             ${subTotal}
                         </h6>
@@ -113,14 +131,15 @@ function CartDetails(props) {
                 </container>
                 <container>
                     <div>
-                        <a href="/">100% Price Match Guarantee</a>
+                        <a href="/terms">100% Price Match Guarantee</a>
+                        {/* <Link> to=/terms  </Link> */}
                     </div>
                     <div>
-                        <a href="/">90 Day Returns</a>
+                        <a href="/terms">90 Day Returns</a>
                     </div>
                 </container>
                 <button className="mt-4" color="primary" block="">
-                    COMPLETE ORDER
+                    COMPLETE CHECKOUT
                 </button>
             </container>
         </>
@@ -131,5 +150,46 @@ function CartDetails(props) {
 export default CartDetails;
 
 
+
+
+function CartItem(props) {
+   
+
+    // just test data
+   
+    let product = {
+        image: "imageSrc11",
+        name: "Raspberry Pi 3 Model B Motherboard ",
+        description: "description11",
+        quantity: 1,
+        price: 38.50
+    };
+
+    return (
+        <>
+            <row>
+                <div className="media">
+                    <div className="media-body">
+                        <img src={PiImg} className="img-fluid mr-3" alt="raspberry pi" />
+                        {product.image}  todo change this
+
+                    </div>
+                    <h5 className="mt-0">{product.name}</h5>
+                </div>
+                <div className="media-count">
+                    <p>
+                        {product.quantity}
+                    </p>
+                </div>
+                <div className="container-fluid">
+                    <h6>
+                        {product.price}
+                    </h6>
+                    {"props.cart.product.price"}
+                </div>
+            </row>
+        </>
+    );
+}
 
 
