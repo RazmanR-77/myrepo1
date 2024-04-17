@@ -73,7 +73,6 @@ let pass = {one: 1};
 
                                     cart.product; 
                                     iteminCart;  is counter
-{/* {console.log(iteminCart)} */}
 
 {console.log( "props data== " , props)}
 {/* { product = ProductItem} */}
@@ -82,10 +81,11 @@ let pass = {one: 1};
 
 {console.log( "product data== " , product)}
 
-
-            <CartItem product= {product}/>
-            {/* <CartItem /> */}
-            
+    <div>         
+    {   cart.map(    (product) =>(
+        <CartItem key={product._id} product= {product}/>
+    ))}
+    </div>
             </container>
                             )}
                         </div>
