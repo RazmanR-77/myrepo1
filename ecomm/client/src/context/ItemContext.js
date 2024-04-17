@@ -54,6 +54,7 @@ function CustomItemContext({ children }) {
 		<itemContext.Provider
 			value={{
 				products,
+				cart,
 				addToCart,
 				removeFromCart,
 				itemsInCart,

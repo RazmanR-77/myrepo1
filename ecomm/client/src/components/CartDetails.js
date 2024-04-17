@@ -7,10 +7,20 @@ import Toggle from "./Toggle";
 import PiImg from '../assets/images/Raspberry_Pi.png';
 import PiLcdImg from '../assets/images/Raspberry_Pi_LCD.png';
 import { itemContext } from "../context/ItemContext";
-import ProductItem from "./ProductItem";
 
 
 function CartDetails(props) {
+
+    const { cart, itemsInCart, totalPrice } = useContext(itemContext);
+    let product ; 
+   
+//     todo
+// -set tooo product 
+  product =    cart[0] ; // shows product data
+// cart[2] 
+
+product = { ...product , product  }
+
 
     //data   set   here
 
@@ -49,9 +59,6 @@ let pass = {one: 1};
         <>
             <container className="cart-details-container">
               
-              todo
-            ccbbtogg 
-            on Toggleclass
                 <Toggle className="container-fluid">
                     {({ on, off, toggle }) => (
                         <div className="container-fluid">
@@ -67,34 +74,24 @@ let pass = {one: 1};
                                     cart.product; 
                                     iteminCart;  is counter
 {/* {console.log(iteminCart)} */}
+
 {console.log( "props data== " , props)}
+{/* { product = ProductItem} */}
 
-                                    
+{console.log( "cart== "  , cart, ",,, ", cart[2], itemsInCart, totalPrice)}
 
-                                    <CartItem product= {1}/>
-                                    <CartItem />
-  
-                                    {/* <row>
-                                        <div className="media">
-                                            <div className="media-body">
-                                                <img src={PiLcdImg} className="img-fluid mr-3" alt="pi lcd" />
-                                            </div>
-                                            <h5 className="mt-0">Raspberry Pi 7" Touchscreen Display</h5>
-                                        </div>
-                                        <div className="media-count">
-                                            <p>1</p>
-                                        </div>
-                                        <div className="container-fluid">
-                                            <h6>$72.92</h6>
-                                        </div>
-                                    </row> */}
-                                </container>
+{console.log( "product data== " , product)}
+
+
+            <CartItem product= {product}/>
+            {/* <CartItem /> */}
+            
+            </container>
                             )}
                         </div>
                     )}
               </Toggle>  
                 Toggle --at the top;;
-                {/* <!-- <Toggle />   --> */}
 
                 <container className="mt-4">
                     <row>
@@ -102,9 +99,9 @@ let pass = {one: 1};
                             Subtotal ({itemCount} items):
                         </h6>
 
-                        todo 
+                        {/* todo 
                         set Toggle to on aND SHOW HERE;
-                    orderTotal and shipping
+                    orderTotal and shipping */}
                         <h6>
                             ${subTotal}
                         </h6>
@@ -151,28 +148,22 @@ export default CartDetails;
 
 
 
-
 function CartItem(props) {
-   
+    //  (product params)
 
-    // just test data
-   
-    let product = {
-        image: "imageSrc11",
-        name: "Raspberry Pi 3 Model B Motherboard ",
-        description: "description11",
-        quantity: 1,
-        price: 38.50
-    };
+let product;
+product = { ...props.product  };
 
     return (
-        <>
+        <div>
+            {console.log("cartitem.product data== ", product,
+                product.price, product["name"])
+            }
             <row>
                 <div className="media">
                     <div className="media-body">
-                        <img src={PiImg} className="img-fluid mr-3" alt="raspberry pi" />
-                        {product.image}  todo change this
-
+                        <img src={product.image} className="img-fluid mr-3" alt={product.image}  />
+                    
                     </div>
                     <h5 className="mt-0">{product.name}</h5>
                 </div>
@@ -183,12 +174,11 @@ function CartItem(props) {
                 </div>
                 <div className="container-fluid">
                     <h6>
-                        {product.price}
+                        $ {product.price}
                     </h6>
-                    {"props.cart.product.price"}
                 </div>
             </row>
-        </>
+        </div>
     );
 }
 
