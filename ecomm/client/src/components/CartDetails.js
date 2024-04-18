@@ -14,7 +14,7 @@ function CartDetails(props) {
     const { cart, itemsInCart, totalPrice } = useContext(itemContext);
     let product ; 
    
-//     todo
+//     todo fix this, remove maybe
 // -set tooo product 
   product =    cart[0] ; // shows product data
 // cart[2] 
@@ -154,10 +154,80 @@ function CartItem(props) {
 let product;
 product = { ...props.product  };
 
+// dummy data  //todo
+// [1,2, "Linen", "Linen","Linen", "Linen"]
+let cart = [
+    {
+        "_id": "661fe1c88b9e5c1672b371ae",
+        "name": "Pointelle Striped Sleeve Sweater",
+        "type": "Women",
+        "description": "With Denim Easy Pants",
+        "price": 89,
+        "image": "https://www.uniqlo.com/jp/ja/contents/collaboration/ines/24ss/common/imgs/lookbookItems/lookbook-3.webp?1712224192811",
+        "__v": 0
+    },
+    {
+        "_id": "661fe1c88b9e5c1672b371ae",
+        "name": "Pointelle Striped Sleeve Sweater",
+        "type": "Women",
+        "description": "With Denim Easy Pants",
+        "price": 89,
+        "image": "https://www.uniqlo.com/jp/ja/contents/collaboration/ines/24ss/common/imgs/lookbookItems/lookbook-3.webp?1712224192811",
+        "__v": 0
+    },
+    {
+        "_id": "661fe1c88b9e5c1672b371ae",
+        "name": "Pointelle Striped Sleeve Sweater",
+        "type": "Women",
+        "description": "With Denim Easy Pants",
+        "price": 89,
+        "image": "https://www.uniqlo.com/jp/ja/contents/collaboration/ines/24ss/common/imgs/lookbookItems/lookbook-3.webp?1712224192811",
+        "__v": 0
+    },
+    {
+        "_id": "661fe1c88b9e5c1672b371af",
+        "name": "Ribbed Polo Short Sleeve Cardigan",
+        "type": "Women",
+        "description": "With Linen Cotton Gather Skirt",
+        "price": 250,
+        "image": "https://www.uniqlo.com/jp/ja/contents/collaboration/ines/24ss/common/imgs/lookbookItems/lookbook-1.webp?1712224193373",
+        "__v": 0
+    }
+]
+
+// todo  get quantity
+    let { qty, cartItem } = getQuantity(cart);
+// cartItem = { ...oneCartItemOnly, ...quantity};
+
+product = { ...product, ...{ quantity: qty }}; 
+//{qty 3}
+
+function getQuantity(cart) {
+    let oneCartItemOnly;
+    oneCartItemOnly = cart.filter(
+        (item) => (item.name == "Pointelle Striped Sleeve Sweater")
+    );
+
+    let cartItem;
+    let qty;
+    qty =
+        oneCartItemOnly.length;
+
+    cartItem = { ...oneCartItemOnly, ...{ quantity: qty } };
+    return { qty, cartItem };
+}
+
     return (
         <div>
             {console.log("cartitem.product data== ", product,
-                product.price, product["name"])
+                product.price, product["name"], 
+                product.price == 89, 
+              "product.name ==compare  " ,  product.name == ("Pointelle Striped Sleeve Sweater") 
+                )
+            }
+
+            {
+                console.log( "cartItem== ", cartItem)
             }
             <row>
                 <div className="media">
