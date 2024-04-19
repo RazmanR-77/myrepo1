@@ -2,8 +2,8 @@
 import React from 'react'
 import CartItem2, { getProduct as getProductJson } from './components/CartItem2';
 
-function MyCodes() {
-
+function Commons() {
+// export global module and function, as Commons()
 
   // A test array of objects. In a real world situation you would have more than just the 'name' key on the objects
   const initialArrayOfObjects = [
@@ -36,8 +36,6 @@ function MyCodes() {
   let { cartList, uniqueList } = getUnique();
 
   // let  cartList, uniqueList   ; 
-
-
 
 
   return (
@@ -85,7 +83,7 @@ function MyCodes() {
   function getUnique() {
     let cartList = [];
 
-    cartList.push(<CartItem2 />);
+    // cartList.push(<CartItem2 />);
     cartList.push(getProductJson());
     cartList.push(getProductJson());
 
@@ -96,7 +94,8 @@ function MyCodes() {
 }
 
 
-// export global module and function
+// export global module and function, as Commons()
+// used to remove duplicate in CartItems
 export function removeDuplicateObjectsByKey(array, fieldToDuplicateCheck) {
   const newArray = []
   const arrayKeys = []
@@ -116,4 +115,4 @@ export function removeDuplicateObjectsByKey(array, fieldToDuplicateCheck) {
 }
 
 
-export default MyCodes
+export default Commons

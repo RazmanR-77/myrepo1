@@ -1,12 +1,12 @@
  
 import React, { Component, useContext, useState } from "react";
 import Toggle from "./Toggle";
-import CartItem2 from "./CartItem2";
+
 import PiImg from '../assets/images/Raspberry_Pi.png';
 import PiLcdImg from '../assets/images/Raspberry_Pi_LCD.png';
 import { itemContext } from "../context/ItemContext";
 
-import { removeDuplicateObjectsByKey } from "../MyCodes";
+import { removeDuplicateObjectsByKey } from "../Commons";
 
 import "./CartDetails.css";
 
@@ -132,13 +132,6 @@ let pass = {one: 1};
         <>
             <container className="cart-details-container">
              
-              {/* <div> 
-
-              todo
-              CartItem222
-     {   CartItem2()}
-                 </div> */}
-
                 <Toggle className="container-fluid">
                     {({ on, off, toggle }) => (
                         <div className="container-fluid">
@@ -150,7 +143,7 @@ let pass = {one: 1};
                                     <button type="button"
                                         class="btn   btn-primary "
                                          onClick={toggle}>
-                                        <span > See Cart item Details  </span>
+                                        <span > See Details of Cart items  </span>
                                     </button>
                                     {off && <span> - </span>}
                                     {on && <span> + </span>}
