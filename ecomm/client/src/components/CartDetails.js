@@ -1,8 +1,5 @@
-// <!-- cartdetails.js.HTML -->
  
 import React, { Component, useContext, useState } from "react";
-// import { Container, Row, Col, Button } from "reactstrap";
-
 import Toggle from "./Toggle";
 import CartItem2 from "./CartItem2";
 import PiImg from '../assets/images/Raspberry_Pi.png';
@@ -11,9 +8,10 @@ import { itemContext } from "../context/ItemContext";
 
 import { removeDuplicateObjectsByKey } from "../MyCodes";
 
+import "./CartDetails.css";
 
 //final hackathon Ecommerce shopping website//
-//developer by: RazmanR , 
+//developer by: RazmanR  
 // date 7/4/2024
 
 function CartDetails(props) {
@@ -23,18 +21,13 @@ function CartDetails(props) {
 
     const [cartList, setCartList] = useState([]);
  
-    // uniqueList
-    // const [uniqueList, setUniqueList] = useState([]);
-   
 
-    //data   set   here
-
-    // stateCartDetails DUMMY DATA ONLY
+    // usestate CartDetails DUMMY DATA ONLY
     let state = {
-        itemCount: 2,
-        subTotal: 111.42,
-        taxes: 9.14,
-        falseShipping: true
+        itemCount: itemsInCart,
+        subTotal: totalPrice,  //total price of all subTotals
+        taxes: 0.00,
+        falseShipping:  true
     };
 
     //useState
@@ -149,34 +142,34 @@ let pass = {one: 1};
                 <Toggle className="container-fluid">
                     {({ on, off, toggle }) => (
                         <div className="container-fluid">
-                            <h2 onClick={toggle}>
-                                <span>See item Details</span> {off && <span>+</span>}
-                                {on && <span>-</span>}
-                            </h2>
+                            <div>  &nbsp; </div>
+                            <div>  &nbsp; </div>
+                            <div>  &nbsp; </div>
+                            <div>
+                                <h2 onClick={toggle}>
+                                    <button type="button"
+                                        class="btn   btn-primary "
+                                         onClick={toggle}>
+                                        <span > See Cart item Details  </span>
+                                    </button>
+                                    {off && <span> - </span>}
+                                    {on && <span> + </span>}
+                                </h2>
+                            </div>
 
 <div class="load" onLoad=  {(e)=> uniqueL = getUnique()}    >
-            onloaddd;;
-
-            {console.log("uniqueList== ", uniqueList, uniqueL, cartL)}
+                    {console.log("uniqueList== ",
+                     uniqueList, uniqueL, cartL)}
         </div>
 
-        todooo
-                {/* tempp only   on || */}
                             {on || (
                                 <container>
 
-                                    cart.product; 
-                                    iteminCart;  is counter
+                        {console.log("props data== ", props)}
+                        {console.log("cart== ", cart, ",,, ", cart[2], itemsInCart, totalPrice)}
 
-        
+                        {console.log("product data== ", product)}
 
-                                    {console.log( "props data== " , props)}
-
-{console.log( "cart== "  , cart, ",,, ", cart[2], itemsInCart, totalPrice)}
-
-{console.log( "product data== " , product)}
-
-todooo
     <div>         
     {  cLMap =  uniqueL.map(    (cartI) =>(
             // <>  CartItem </>
@@ -195,19 +188,13 @@ todooo
     </div>
 )}
      </Toggle>  
-                Toggle --at the top;;
-
-                {console.log("oneCartItemOnly==  ",  oneCartItemOnly)}
 
                 <container className="mt-4">
                     <row>
                         <h6>
                             Subtotal ({itemCount} items):
                         </h6>
-
-                        {/* todo 
-                        set Toggle to on aND SHOW HERE;
-                    orderTotal and shipping */}
+                 
                         <h6>
                             ${subTotal}
                         </h6>
@@ -271,75 +258,13 @@ function CartItem(props) {
 let product;
 product = { ...props.product  };
 
-// dummy data  //todo
-// [1,2, "Linen", "Linen","Linen", "Linen"]
-
-// let cart = [
-//     {
-//         "_id": "661fe1c88b9e5c1672b371ae",
-//         "name": "Pointelle Striped Sleeve Sweater",
-//         "type": "Women",
-//         "description": "With Denim Easy Pants",
-//         "price": 89,
-//         "image": "https://www.uniqlo.com/jp/ja/contents/collaboration/ines/24ss/common/imgs/lookbookItems/lookbook-3.webp?1712224192811",
-//         "__v": 0
-//     },
-//     {
-//         "_id": "661fe1c88b9e5c1672b371ae",
-//         "name": "Pointelle Striped Sleeve Sweater",
-//         "type": "Women",
-//         "description": "With Denim Easy Pants",
-//         "price": 89,
-//         "image": "https://www.uniqlo.com/jp/ja/contents/collaboration/ines/24ss/common/imgs/lookbookItems/lookbook-3.webp?1712224192811",
-//         "__v": 0
-//     },
-//     {
-//         "_id": "661fe1c88b9e5c1672b371ae",
-//         "name": "Pointelle Striped Sleeve Sweater",
-//         "type": "Women",
-//         "description": "With Denim Easy Pants",
-//         "price": 89,
-//         "image": "https://www.uniqlo.com/jp/ja/contents/collaboration/ines/24ss/common/imgs/lookbookItems/lookbook-3.webp?1712224192811",
-//         "__v": 0
-//     },
-//     {
-//         "_id": "661fe1c88b9e5c1672b371af",
-//         "name": "Ribbed Polo Short Sleeve Cardigan",
-//         "type": "Women",
-//         "description": "With Linen Cotton Gather Skirt",
-//         "price": 250,
-//         "image": "https://www.uniqlo.com/jp/ja/contents/collaboration/ines/24ss/common/imgs/lookbookItems/lookbook-1.webp?1712224193373",
-//         "__v": 0
-//     }
-// ]
-
-
-// todo  get quantity
-    let { qty, cartItem } = getQuantity(props.cart);
+   let { qty, cartItem } = getQuantity(props.cart);
     product = { ...product, ...{ quantity: qty }}; 
-//{qty 3}
-
-
+ 
   // useState try
-  let cartList = props.cartList;  //initialise
-//   let cartList = [];  //initialise
-
-// cartItem = product;
-
-// (cartItem.name != product.name )
-
-
-// let cartList;
-//   todo
-
-// todo    
-// (cartItem.name == product.name )
-// if (cartItem == product )  {
+  let cartList = props.cartList;  //initialise 
  
     cartList.push(cartItem) ;
-// }
-
-
 
 function getQuantity(cart) {
     let oneCartItemOnly;
@@ -377,18 +302,21 @@ function getQuantity(cart) {
                 console.log( "cartItem== ", cartItem,
                 cartList, (cartItem.name == product.name ) )
             }
+
             <row>
                 <div className="media">
                     <div className="media-body">
-                        <img src={product.image} className="img-fluid mr-3" alt={product.image}  />
-                    
+                        <img src={product.image} className="img-fluid mr-3" alt={product.image} />
+
                     </div>
-                    <h5 className="mt-0">{product.name}</h5>
-                </div>
-                <div className="media-count">
-                    <p>
-                        {product.quantity}
-                    </p>
+                    <h5 className="mt-0">{product.name}
+                        <div className="media-count">
+                            <p>
+                                x {product.quantity}
+                            </p>
+                        </div>
+                    </h5>
+                    <div>&nbsp;</div>
                 </div>
                 <div className="container-fluid">
                     <h6>
