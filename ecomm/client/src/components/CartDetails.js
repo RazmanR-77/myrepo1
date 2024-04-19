@@ -1,5 +1,5 @@
 // <!-- cartdetails.js.HTML -->
-// <!-- convert from trasnfrom tools cod eonline   -->
+ 
 import React, { Component, useContext, useState } from "react";
 // import { Container, Row, Col, Button } from "reactstrap";
 
@@ -12,6 +12,10 @@ import { itemContext } from "../context/ItemContext";
 import { removeDuplicateObjectsByKey } from "../MyCodes";
 
 
+//final hackathon Ecommerce shopping website//
+//developer by: RazmanR , 
+// date 7/4/2024
+
 function CartDetails(props) {
 
     const { cart, itemsInCart, totalPrice } = useContext(itemContext);
@@ -22,17 +26,10 @@ function CartDetails(props) {
     // uniqueList
     // const [uniqueList, setUniqueList] = useState([]);
    
-//     todo fix this, remove maybe
-// -set tooo product 
-  product =    cart[0] ; // shows product data
-// cart[2] 
-
-product = { ...product , product  }
-
 
     //data   set   here
 
-    // stateCartDetails
+    // stateCartDetails DUMMY DATA ONLY
     let state = {
         itemCount: 2,
         subTotal: 111.42,
@@ -67,9 +64,6 @@ let pass = {one: 1};
      cLMap =  cartList;
     //  let list = [];
 
-     
-//   cartList.  map()
-
 //   -filter ()  
   
 // todo 
@@ -79,90 +73,71 @@ let pass = {one: 1};
 
   let { cartL, uniqueL } = getUnique();
 
-  
-  function getUnique() {
-    //remove duplicates 
-   
+    function getUnique() {
+        //remove duplicates 
 
-       //get same cart item only
-      let oneCartItemOnly;
-  
-    //  cartlist 
-    //  clmap;
-//    
-    //   uniqueList = cartList.filter(function(item, index){
-
-    //     console.log( "cartDetails.list11== ",  item.name,  index , item, cartList.indexOf(item) == index); 
-    //     if(cartList.indexOf(item) == index)
-    //    { oneCartItemOnly = item;
-    //     list.push( oneCartItemOnly );
-    //         }
-
-    //     return (cartList.indexOf(item) == index)
-    //     // ? item : null;
-    //   });
-
+        //get same cart item only
+        let oneCartItemOnly;
  
-      
-    //     oneCartItemOnly = cartList.filter(
-    //       (item) => (item.name)
-    //   )
-       
-      // (item.name == product.name)
- 
-    //   todo
-// let list = [];
+        let uniqueL, cartL; // uniqueLittst;
 
-//   list = cartList;
-      // then add updayte  to cartList[]  usestate ;;
-   
-      //   list.push(oneCartItemOnly);
+        let list;
+        list = [cart];  //cartList
+        let listOut;
 
-   //   todo
-    //   setUniqueList(uniqueL  );
+        // todooo todo
+        // let uniqueList;
+        uniqueL = removeDuplicateObjectsByKey(...list, 'name');
+
+        let outputList = [];
+        let product, qty;
+
+        // setUniqueList(uniqueL);
+        console.log("uniqueList== ", uniqueL);
 
 
-    // console.log("cartDetails.list22== list =="  ,    cartList , list, ",, uniqueL== ",  uniqueL); 
+        oneCartItemOnly = [];
+        
+        
 
-    let   uniqueL, cartL; // uniqueLittst;
+        // for each cart item in uniqueList,
+        // to get quanity from the full list 
+        // output is outputList;
+        outputList = getQuantity(uniqueL, oneCartItemOnly, list, outputList);
 
-    let  list;
-    list = [cart];  //cartList
-    let listOut;
-    
-    //  uniqueL =   removeDuplicateObjectsByKey(list, "name"   );
+        // todo 
+        // /final output
+        console.log("uniqueList== ", uniqueL, "outputList== ", outputList);
 
-    //   list.push(oneCartItemOnly);
+        return { cartL, uniqueL };  
+    }
 
-       
-    // listOut =   removeDuplicateObjectsByKey(list, "name"   );
-    // listOut =   removeDuplicateObjectsByKey(listOut, "name"   );
+    function getQuantity(uniqueL, oneCartItemOnly, list, outputList) {
+        uniqueL.forEach(
+            (uniqueC) => {
+                //get same cart item only
+                oneCartItemOnly = list[0].filter(
+                    (item, key) => (item.name == uniqueC.name)
+                );
+
+                let cartItem;
+                cartItem = uniqueC;
+
+                cartItem = {
+                    ...cartItem,
+                    ...{
+                        quantity: oneCartItemOnly.length
+                    }
+                };
+           
+                outputList.push(cartItem);
+                console.log("after filteroneCartItemOnly== ", oneCartItemOnly, cartItem, "outputList== ", outputList);
 
 
-    // todooo todo
-    // let uniqueList;
-    uniqueL = removeDuplicateObjectsByKey(...list, 'name');
+            });
+        return outputList;
+    }
 
-    // uniqueL = removeDuplicateObjectsByKey(...[uniqueL], 'name');
-
-
-    // uniqueL =    listOut;
-
-    // setUniqueList(uniqueL);
-    console.log("cartDetails.list22== list =="  ,    cartList , list, ",, uniqueLll== ",  uniqueL); 
-    // setUniqueList(uniqueL);
-
-    
-    //   list = cartList;
-    //   setCartList(list);
-
-      
-    // setCartListMap(cartList);
-
-      return  {  cartL, uniqueL};  //oneCartItemOnly;
-  }
-  
-  
 
     return (
         <>
@@ -183,16 +158,11 @@ let pass = {one: 1};
                                 {on && <span>-</span>}
                             </h2>
 
-<div class="load" onLoad={uniqueL = getUnique()}    >
+<div class="load" onLoad=  {(e)=> uniqueL = getUnique()}    >
             onloaddd;;
 
-            {/* <div class="load" onLoad={uniqueLL = getUnique()}    >
-onloaddd;;
-
-</div> */}
             {console.log("uniqueList== ", uniqueList, uniqueL, cartL)}
         </div>
-
 
                 {/* tempp only   on || */}
                             {on != (
@@ -204,18 +174,17 @@ onloaddd;;
         
 
                                     {console.log( "props data== " , props)}
-{/* { product = ProductItem} */}
 
 {console.log( "cart== "  , cart, ",,, ", cart[2], itemsInCart, totalPrice)}
 
 {console.log( "product data== " , product)}
 
     <div>         
-    {  cLMap =  uniqueL.uniqueL.map(    (product) =>(
-
-        
-        <CartItem key={product._id} product= {product}
-        cart={cart} cartList={cartList}  />
+    {  cLMap =  uniqueL.map(    (product) =>(
+            <>  CartItem </>
+        // todo
+        // <CartItem key={product._id} product= {product}
+        // cart={cart} cartList={cartList}  />
                     // {cartList}
         ))}
 
@@ -230,11 +199,7 @@ onloaddd;;
   
     </div>
 )}
-           
-
-
-
-                </Toggle>  
+     </Toggle>  
                 Toggle --at the top;;
  
 
