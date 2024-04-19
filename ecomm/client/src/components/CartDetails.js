@@ -113,7 +113,7 @@ let pass = {one: 1};
     }
 
     function getQuantity(uniqueL, oneCartItemOnly, list, outputList) {
-        uniqueL.forEach(
+        uniqueL.forEach(  
             (uniqueC) => {
                 //get same cart item only
                 oneCartItemOnly = list[0].filter(
