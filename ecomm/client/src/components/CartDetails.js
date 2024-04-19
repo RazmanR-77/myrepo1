@@ -94,11 +94,7 @@ let pass = {one: 1};
 
         // setUniqueList(uniqueL);
         console.log("uniqueList== ", uniqueL);
-
-
         oneCartItemOnly = [];
-        
-        
 
         // for each cart item in uniqueList,
         // to get quanity from the full list 
@@ -108,7 +104,7 @@ let pass = {one: 1};
         // todo 
         // /final output
         console.log("uniqueList== ", uniqueL, "outputList== ", outputList);
-
+        uniqueL = outputList;
         return { cartL, uniqueL };  
     }
 
@@ -164,8 +160,9 @@ let pass = {one: 1};
             {console.log("uniqueList== ", uniqueList, uniqueL, cartL)}
         </div>
 
+        todooo
                 {/* tempp only   on || */}
-                            {on != (
+                            {on || (
                                 <container>
 
                                     cart.product; 
@@ -179,30 +176,26 @@ let pass = {one: 1};
 
 {console.log( "product data== " , product)}
 
+todooo
     <div>         
-    {  cLMap =  uniqueL.map(    (product) =>(
-            <>  CartItem </>
+    {  cLMap =  uniqueL.map(    (cartI) =>(
+            // <>  CartItem </>
         // todo
-        // <CartItem key={product._id} product= {product}
-        // cart={cart} cartList={cartList}  />
+        <CartItem key={cartI._id} product= {cartI}
+        cart={cart} cartList={cartList}  />
                     // {cartList}
         ))}
 
-                    {console.log("cartList data== ", cartList.length, cartList, "cLMap== " + cLMap, cLMap[0], cart,  "uniqueL.uniqueL== " ,uniqueL.uniqueL)}
+                    {console.log("uniqueList uniqueL.CartDetails.CartItems; uniqueL== " ,uniqueL)}
                 </div>
 
 
             </container>
         )}
-
-             
-  
     </div>
 )}
      </Toggle>  
                 Toggle --at the top;;
- 
-
 
                 {console.log("oneCartItemOnly==  ",  oneCartItemOnly)}
 
