@@ -1,0 +1,58 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+  }
+  
+  .card-columns {
+    column-count: 3;
+    column-gap: 20px;
+  }
+  
+  .card {
+    background-color: white;
+    border: 1px solid wheat;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid white;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: gray;
+  }
+  
+  .btn-outline-info {
+    background-color: peachpuff;
+    border: 1px solid yellowgreen;
+    color: blue;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .btn-outline-info:hover {
+    background-color: blue;
+    color: wheat;
+  }
+  
+  

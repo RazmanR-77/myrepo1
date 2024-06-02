@@ -1,0 +1,108 @@
+/* CartDetails.css */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+.media-body {
+    position: relative;
+    min-width: 60px;
+    max-width: 100px;
+    height: 120px;
+    display: flex;
+    margin-right: 1em;
+    margin-bottom: 1em;
+   
+}
+.media-count {
+
+    position: absolute;
+    display: grid;
+    /* top: 0; */
+    left: 0;
+    background-color: #FB5631;
+    /* aqua  ; */
+    /* $mint-light; */
+    color: #fff;
+    border-radius: 50%;
+    width: 30px;
+    /* height: 20px; */
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 4px 0px ;
+}
+
+.right-col-container {
+    background-color: #eee;
+    .cart-details-container {
+        h5, h6, p, a {
+            font-size: 14px;
+        }
+        .media-body {
+            position: relative;
+            min-width: 60px;
+            max-width: 100px;
+            margin-right: 1em;
+            margin-bottom: 1em;
+
+        }
+        .media-count {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: aqua  ;
+            /* $mint-light; */
+            color: #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 4px 0px ;
+        }
+    }
+    
+    .inforeel-container {
+        p {
+            font-size: 0.9em;
+        }
+        .title-p{
+            margin-bottom: 0;
+        }
+        .co-badge-container {
+            max-width: 80px;
+            padding: 0;
+            img {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+    }
+    
+    .review-container {
+        .star-rate {
+            display: block;
+            margin: -4px 0;
+        }
+        .fa-star {
+            color: #FFC107;
+            font-size: 0.8em;
+        }
+        .co-verified-buyer {
+            span {
+                font-size: 0.8em
+            }
+        }
+    }
+    .no-pr {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .avatar-container {
+        padding: 0;
+        margin-bottom: 1em;
+        text-align: center;
+        .avatar {
+            max-width: 80px;
+            border-radius: 50%;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 2px 0px ;
+        }
+    }
+    
+}
